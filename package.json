@@ -1,0 +1,24 @@
+{
+  "name": "velos",
+  "version": "1.0.0",
+  "description": "Next-gen compiler &amp; full-stack framework",
+  "main": "index.js",
+  "scripts": {
+    "scripts": {
+      "build": "tsc",
+      "dev": "tsc --watch"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FikerTaddev/Velos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/FikerTaddev/Velos/issues"
+  },
+  "homepage": "https://github.com/FikerTaddev/Velos#readme"
+}
