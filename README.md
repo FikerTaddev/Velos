@@ -111,3 +111,11 @@ git commit -m "feat: add reactive signal primitive"
 ```
 git push origin feat/your-feature
 ```
+# Serve Velos project
+```
+npx serve .
+```
+# Open in browser
+```
+http://localhost:5000/index.html
+```

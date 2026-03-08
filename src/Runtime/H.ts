@@ -1,7 +1,7 @@
 /**
- * 
- * @param tag 
- * @param props 
+ * HyperScript
+ * @param tag  HTMLTag div , h1  ,nav...
+ * @param props HTMLAtrributes class style...
  * @param children 
  * @returns 
  */
