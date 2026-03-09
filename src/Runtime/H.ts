@@ -11,7 +11,12 @@ export function H(tag: string, props: any, ...children: any[]) {
   
     if (props) {
       for (const key in props) {
-        element.setAttribute(key, props[key])
+        if (key.startsWith("on") && typeof props[key] === "function") {
+          //Even Handlers
+          (element as any)[key.toLowerCase()] = props[key]
+        } else {
+          element.setAttribute(key, props[key])
+        }
       }
     }
   

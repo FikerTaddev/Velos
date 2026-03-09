@@ -1,11 +1,10 @@
 {
   "name": "velos",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Next-gen compiler &amp; full-stack framework",
   "main": "index.js",
- 
   "scripts": {
-    "dev": "tsc --watch && serve dist",
+    "dev": "tsc  && serve dist",
     "build": "tsc"
   },
   "repository": {
@@ -19,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/FikerTaddev/Velos/issues"
   },
-  "homepage": "https://github.com/FikerTaddev/Velos#readme"
+  "homepage": "https://github.com/FikerTaddev/Velos#readme",
+  "dependencies": {
+    "tsup": "^8.5.1"
+  }
 }
