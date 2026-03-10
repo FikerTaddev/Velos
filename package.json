@@ -13,8 +13,8 @@
     "url": "git+https://github.com/FikerTaddev/Velos.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Fiker",
+  "license": "Apache-2.0",
   "type": "module",
   "bugs": {
     "url": "https://github.com/FikerTaddev/Velos/issues"
