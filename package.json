@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsc  && serve dist",
-    "build": "tsc",
-    "test":"vitest"
+    "build": "tsup src/index.ts --format cjs,esm,iife --minify --dts --sourcemap --out-dir dist --name velos",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
