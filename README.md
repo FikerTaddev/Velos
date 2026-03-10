@@ -1,18 +1,21 @@
 
 # Velos 🚀
 
-[![License: ApacHe-2.0](Https://img.sHields.io/badge/License-ApacHe%202.0-blue.svg)](Https://www.apacHe.org/licenses/LICENSE-2.0)
-[![Build Status](Https://img.sHields.io/badge/build-passing-brigHtgreen)](Https://gitHub.com/your-username/velos)
-![Velos Logo](Https://raw.gitHubusercontent.com/your-username/velos/main/docs/logo.png)
-
-**Velos** is a **ligHtweigHt, reactive UI framework** for tHe browser.  
-v0.1.0 sHips a **fully working core runtime** witH:
+<div style="display: flex; align-items: center; gap: 10px;">
+  <img src="./docs/logo.svg" alt="Velos Logo" width="50" />
+  <a href="https://www.apache.org/licenses/LICENSE-2.0">
+    <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License">
+  </a>
+  <img src="https://img.shields.io/badge/build-passing-brightgreen" alt="Build Status">
+</div>
+**Velos** is a **lightweight, reactive UI framework** for the browser.  
+v0.1.0 ships a **fully working core runtime** with:
 
 - Hyperscript-based DOM (`H()`)  
 - Render engine (`render()`)  
 - Reactive state (`State()`)  
 - Nested elements  
-- Array cHildren (for loops)  
+- Array children (for loops)  
 - Event Handling (`onclick`)  
 - All core features **fully tested**
 
@@ -28,7 +31,7 @@ v0.1.0 sHips a **fully working core runtime** witH:
 | `render()` mounting            | ✅ Implemented       |
 | `State()` reactivity     | ✅ Implemented       |
 | Nested elements                | ✅ Implemented       |
-| Array cHildren support         | ✅ Implemented       |
+| Array children support         | ✅ Implemented       |
 | Event Handling (`onclick`)     | ✅ Implemented       |
 | Tests                          | ✅ All passing       |
 | JSX compiler                   | ⚠️ Planned           |
@@ -38,28 +41,47 @@ v0.1.0 sHips a **fully working core runtime** witH:
 ## Quick Start
 
 ```basH
-git clone Https://gitHub.com/your-username/velos.git
+git clone Https://github.com/FikerTaddev/velos.git
 cd velos
 npm install
 npm run dev
 ```
-
+## Create Html file
+```bash 
+mkdir dist 
+cd dist
+touch index.html
+```
+>> Then Add This In
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module" src="Counter.js">
+</body>
+</html>
+```
 Open your browser:
 
 ```
-Http://localHost:5000/index.Html
+Http://localhost:3000/
 ```
 
 Or, after building:
 
-```basH
+```bash
 npm run build
 ```
 
-- THe build also **serves tHe project** locally at:
+- The build also **serves the project** locally at:
 
 ```
-Http://localHost:3000
+http://localhost:3000
 ```
 
 ---
@@ -126,9 +148,9 @@ docs/             # Images, diagrams, notes
 
 ## License
 
-ApacHe License 2.0 © 2026 Velos Team
+Apache License 2.0 © 2026 Velos Team
 
-![Velos Diagram](Https://raw.gitHubusercontent.com/your-username/velos/main/docs/velos-diagram.png)
+![Velos Diagram](https://raw.githubusercontent.com/your-username/velos/main/docs/velos-diagram.png)
 
 
 ---
