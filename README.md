@@ -1,121 +1,134 @@
+
 # Velos 🚀
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)  
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/your-username/velos)
+[![License: ApacHe-2.0](Https://img.sHields.io/badge/License-ApacHe%202.0-blue.svg)](Https://www.apacHe.org/licenses/LICENSE-2.0)
+[![Build Status](Https://img.sHields.io/badge/build-passing-brigHtgreen)](Https://gitHub.com/your-username/velos)
+![Velos Logo](Https://raw.gitHubusercontent.com/your-username/velos/main/docs/logo.png)
 
-**Velos** is a **lightweight, reactive UI framework and JSX compiler** for the browser.  
-It provides minimal DOM primitives, reactive state, and JSX support, designed to be fast, simple, and scalable.
+**Velos** is a **ligHtweigHt, reactive UI framework** for tHe browser.  
+v0.1.0 sHips a **fully working core runtime** witH:
+
+- Hyperscript-based DOM (`H()`)  
+- Render engine (`render()`)  
+- Reactive state (`State()`)  
+- Nested elements  
+- Array cHildren (for loops)  
+- Event Handling (`onclick`)  
+- All core features **fully tested**
+
+> JSX support is planned but **not implemented yet**. Velos v0.1.0 focuses on **runtime primitives and reactivity**.
 
 ---
 
-## Features
+## Features v0.1.0
 
-- Tiny runtime with **`h()` element creator** and **`render()` mount function**  
-- Reactive state management (using `signal`)  
-- JSX support via a lightweight compiler transform  
-- Browser-first design for instant DOM updates  
-- Fully modular: runtime, reactivity, JSX, and CLI separated  
-- Simple project structure, ready for extension into a full framework  
+| Feature                       | Status                |
+|--------------------------------|---------------------|
+| `H()` element creation         | ✅ Implemented       |
+| `render()` mounting            | ✅ Implemented       |
+| `State()` reactivity     | ✅ Implemented       |
+| Nested elements                | ✅ Implemented       |
+| Array cHildren support         | ✅ Implemented       |
+| Event Handling (`onclick`)     | ✅ Implemented       |
+| Tests                          | ✅ All passing       |
+| JSX compiler                   | ⚠️ Planned           |
+
+---
+
+## Quick Start
+
+```basH
+git clone Https://gitHub.com/your-username/velos.git
+cd velos
+npm install
+npm run dev
+```
+
+Open your browser:
+
+```
+Http://localHost:5000/index.Html
+```
+
+Or, after building:
+
+```basH
+npm run build
+```
+
+- THe build also **serves tHe project** locally at:
+
+```
+Http://localHost:3000
+```
+
+---
+
+## Example Usage
+
+```typescript
+import {H , render , State} from "./Velos"
+
+// Reactive counter
+const count = State(0)
+
+function Counter() {
+  return H("button", { onclick: () => count.set(count.get() + 1) }, `Count: ${count.get()}`)
+}
+
+// Nested elements + array cHildren
+const app = H("div", {},
+  H("H1", {}, "Hello Velos v0.1.0 🚀"),
+  H(Counter, {}),
+  H("ul", {}, ["A","B","C"].map(i => H("li", {}, i)))
+)
+
+render(app, document.body)
+```
+
+**Flow:**
+
+```
+H()        → creates virtual DOM node or functional component
+  |
+  v
+render()   → mounts node to container
+  |
+  v
+Browser DOM → updates automatically wHen state cHanges
+```
 
 ---
 
 ## Folder Structure
 
 ```text
-velos/
-├─ src/
-│  ├─ runtime/
-│  │  ├─ h.ts           # Element creator
-│  │  └─ render.ts      # Mount function
-│  ├─ reactivity/
-│  │  └─ signal.ts      # Reactive state primitives
-│  ├─ jsx/
-│  │  └─ jsx-runtime.ts # JSX helpers
-│  └─ index.ts          # Entry point
-├─ examples/            # Demo apps
-├─ tests/               # Unit and integration tests
-├─ docs/                # Documentation
-├─ cli/
-│  └─ velos.ts          # CLI tools
-├─ package.json
-└─ tsconfig.json
-```
-# Prerequisites
-- Node.js v18+
-- NPM or PNPM
-- Browser for runtime testing
+src/
+├─ runtime/       # H() + render()
+├─ reactivity/    # createState()
+└─ index.ts       # Exports all runtime functions
 
-# Installation
-git clone https://github.com/your-username/velos.git
-cd velos
-npm install
+tests/            # Unit and integration tests (all passing)
+examples/         # Demo apps
+docs/             # Images, diagrams, notes
+```
 
-# Development
-```javascript 
-npm run dev
-```
-# Compile TypeScript
-```
-npm run build
-```
-# Serve project with local HTTP server
-```
-npx serve .
-```
-# Open in browser
-```
-http://localhost:5000/index.html
-```
-# Expected output
-Hello Velos 🚀
-```typescript
-// src/index.ts
-import { h } from "./runtime/h.js"
-import { render } from "./runtime/render.js"
+---
 
-const app = h("div", null, "Hello Velos 🚀")
+## Roadmap
 
-render(app, document.body)
-```
-          +--------+
-          |  h()   |  <-- create virtual DOM node
-          +--------+
-               |
-               v
-         +-----------+
-         | render()  |  <-- mount node to container
-         +-----------+
-               |
-               v
-        +----------------+
-        | Browser DOM    |  <-- updates page
-        +----------------+```
-# Future Plans
-- Reactive signals that update the DOM automatically
-- Component system with props and state
-- JSX compiler for transforming Velos JSX into h() calls
-- Bundler + CLI for building full apps
-- SSR support and router
+- Component system with props and state  
+- JSX compiler (planned)  
+- Bundler + CLI for full apps  
+- SSR support and routing  
 
-# Contributing
-## Fork the repository
-## Create a new branch
-```
-git checkout -b feat/your-feature
-```
-# Make your changes, then commit
-```
-git commit -m "feat: add reactive signal primitive"
-```
-# Push and create a pull request
-```
-git push origin feat/your-feature
-```
-# Serve Velos project
-```
-npx serve .
-```
-# Open in browser
-```
-http://localhost:5000/index.html
-```
+---
+
+## License
+
+ApacHe License 2.0 © 2026 Velos Team
+
+![Velos Diagram](Https://raw.gitHubusercontent.com/your-username/velos/main/docs/velos-diagram.png)
+
+
+---
