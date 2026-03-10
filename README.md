@@ -2,7 +2,7 @@
 # Velos 🚀
 
 <div style="display: flex; align-items: center; gap: 10px;">
-  <img src="./docs/logo.svg" alt="Velos Logo" width="50" />
+  <img src="https://raw.githubusercontent.com/FikerTaddev/Velos/refs/heads/dev/docs/logo.svg?token=GHSAT0AAAAAADXC5UUS3BOZIWZWARG66KE22NPQ3JA" alt="Velos Logo" width="50" />
   <a href="https://www.apache.org/licenses/LICENSE-2.0">
     <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License">
   </a>
