@@ -1,0 +1,31 @@
+{
+  "name": "velos",
+  "version": "0.1.0",
+  "description": "Next-gen compiler &amp; full-stack framework",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc  && serve dist",
+    "build": "tsup src/index.ts --format cjs,esm,iife --minify --dts --sourcemap --out-dir dist --global-name velos",
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FikerTaddev/Velos.git"
+  },
+  "keywords": [],
+  "author": "Fiker",
+  "license": "Apache-2.0",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/FikerTaddev/Velos/issues"
+  },
+  "homepage": "https://github.com/FikerTaddev/Velos#readme",
+  "dependencies": {
+    "tsup": "^8.5.1"
+  },
+  "devDependencies": {
+    "jsdom": "^28.1.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}
