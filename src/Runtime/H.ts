@@ -1,32 +1,39 @@
-/**
- * HyperScript
- * @param tag  HTMLTag div , h1  ,nav...
- * @param props HTMLAtrributes class style...
- * @param children 
- * @returns 
- */
-export function H(tag: string, props: any, ...children: any[]) {
-    
-    const element = document.createElement(tag)
-  
-    if (props) {
-      for (const key in props) {
-        if (key.startsWith("on") && typeof props[key] === "function") {
-          //Even Handlers
-          (element as any)[key.toLowerCase()] = props[key]
-        } else {
-          element.setAttribute(key, props[key])
-        }
-      }
-    }
-  
-    children.forEach(child => {
-      if (typeof child === "string") {
-        element.appendChild(document.createTextNode(child))
-      } else if (child instanceof Node) {
-        element.appendChild(child)
-      }
-    })
-  
-    return element
+type Component = (props: any) => HTMLElement
+
+export function H( tag: string | Component, props: any = {}, ...children: any[]): HTMLElement {
+
+  if (typeof tag === "function") {
+    return tag({ ...props, children })
   }
+
+  const el = document.createElement(tag)
+
+  for (const key in props) {
+    ; (el as any)[key] = props[key]
+  }
+
+  function append(child: any) {
+
+    if (child == null) return
+
+    // flatten arrays
+    if (Array.isArray(child)) {
+      child.forEach(append)
+      return
+    }
+
+    if (typeof child === "string" || typeof child === "number") {
+      el.appendChild(document.createTextNode(String(child)))
+      return
+    }
+
+    if (child instanceof Node) {
+      el.appendChild(child)
+      return
+    }
+
+  }
+  children.forEach(append)
+
+  return el
+}
