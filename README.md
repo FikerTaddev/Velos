@@ -151,7 +151,7 @@ docs/             # Images, diagrams, notes
 
 Apache License 2.0 © 2026 Velos Team
 
-![Velos Diagram](https://raw.githubusercontent.com/your-username/velos/main/docs/velos-diagram.png)
+![Velos Diagram](https://raw.githubusercontent.com/FikerTaddev/Velos/refs/heads/main/docs/logo.svg)
 
 
 ---
