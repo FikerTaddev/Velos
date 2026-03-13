@@ -1,3 +1,3 @@
-export * from "./runtime/H.js"
-export * from "./runtime/render.js"
+export * from "./Runtime/H.js"
+export * from "./Runtime/Render.js"
 export * from "./reactivity/state.js"
