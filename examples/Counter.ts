@@ -1,4 +1,4 @@
-import { H, render, State } from "../src/index.js"
+import { H, Render, State } from "../src/index.js"
 
 const Counter = State(0)
 
@@ -8,7 +8,7 @@ function f() {
 
 function App() {
   return H(
-    "div",
+    "main",
     null,
     H(
       "h1",
@@ -19,11 +19,11 @@ function App() {
 }
 
 // Initial render
-render(App(), document.body)
+Render(App, document.body)
 
 // Re-render whenever state changes
 Counter.subscribe(() => {
   // Remove old content
   document.body.innerHTML = ""
-  render(App(), document.body)
+  Render(App, document.body)
 })
