@@ -90,7 +90,7 @@ http://localhost:3000
 ## Example Usage
 
 ```typescript
-import {H , render , State} from "./Velos"
+import {H , Render , State} from "./Velos"
 
 // Reactive counter
 const count = State(0)
@@ -106,7 +106,7 @@ const app = H("div", {},
   H("ul", {}, ["A","B","C"].map(i => H("li", {}, i)))
 )
 
-render(app, document.body)
+render(app(), document.body)
 ```
 
 **Flow:**
