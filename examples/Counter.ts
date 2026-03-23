@@ -1,29 +1,27 @@
-import { H, render, State } from "../src/index.js"
+import { H, Render, State } from "../src/index.js"
 
-const Counter = State(0)
+// Simple state initialization
+const [getCount, setCount] = State(0)
 
 function f() {
-  Counter.set(Counter.get() + 1)
+  setCount(getCount() + 1)
 }
 
 function App() {
   return H(
-    "div",
+    "main",
     null,
     H(
       "h1",
       null,
-      H("button", { onclick: f }, `Click me ${Counter.get()}`)
+      H(
+        "button",
+        { onclick: f },
+        `Click me ${getCount()}`
+      )
     )
   )
 }
 
-// Initial render
-render(App(), document.body)
-
-// Re-render whenever state changes
-Counter.subscribe(() => {
-  // Remove old content
-  document.body.innerHTML = ""
-  render(App(), document.body)
-})
+// Render the app
+Render(App, document.body)

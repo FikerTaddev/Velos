@@ -1,10 +1,26 @@
+let currentRenderer: (() => void) | null = null
+
+export function getGlobalRenderer() {
+  return currentRenderer
+}
+
 /**
  * 
- * @param vnode Child Node
- * @param container  Parrent container
+ * @param vnode Child Node or component function
+ * @param container Parent container
  */
-export function render(vnode: Node, container: HTMLElement) {
-    // remove old content
+export function Render(vnode: Node | (() => Node), container: HTMLElement) {
+
+  const refresh = () => {
     container.innerHTML = ""
-    container.appendChild(vnode)
+    let node = typeof vnode === "function" ? vnode() : vnode
+    if (!(node instanceof Node)) {
+      throw new Error("Render: vnode must return a DOM Node")
+    }
+    container.appendChild(node)
+  }
+
+  currentRenderer = refresh
+  refresh()
+  return refresh
 }
