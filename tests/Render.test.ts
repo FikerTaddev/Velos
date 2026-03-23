@@ -1,14 +1,14 @@
 import { describe, it, expect } from "vitest"
-import { render } from "../src"
+import { Render } from "../src"
 import { H } from "../src"
 
-describe("render()", () => {
+describe("Render()", () => {
 
   it("mounts element to container", () => {
 
     const container = document.createElement("div")
 
-    render(
+    Render(
       H("p", {}, "hello"),
       container
     )

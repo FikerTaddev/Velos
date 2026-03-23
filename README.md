@@ -89,23 +89,28 @@ http://localhost:3000
 ## Example Usage
 
 ```typescript
-import {H , render , State} from "./Velos"
+import { H, Render, State } from "./Velos"
 
-// Reactive counter
-const count = State(0)
+// Reactive count - no manual setup needed!
+const [count, setCount] = State(0)
 
 function Counter() {
-  return H("button", { onclick: () => count.set(count.get() + 1) }, `Count: ${count.get()}`)
+  return H("button", { 
+    onclick: () => setCount(count() + 1) 
+  }, `Count: ${count()}`)
 }
 
-// Nested elements + array cHildren
-const app = H("div", {},
-  H("H1", {}, "Hello Velos v0.1.0 🚀"),
-  H(Counter, {}),
-  H("ul", {}, ["A","B","C"].map(i => H("li", {}, i)))
-)
+// Nested elements + array children
+function App() {
+  return H("div", {},
+    H("h1", {}, "Hello Velos v0.1.0 🚀"),
+    H(Counter, {}),
+    H("ul", {}, ["A","B","C"].map(i => H("li", {}, i)))
+  )
+}
 
-render(app, document.body)
+// Initial render
+Render(App, document.body)
 ```
 
 **Flow:**
