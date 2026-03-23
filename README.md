@@ -2,12 +2,13 @@
 # Velos 🚀
 
 <div style="display: flex; align-items: center; gap: 10px;">
-  <img src="https://raw.githubusercontent.com/FikerTaddev/Velos/refs/heads/dev/docs/logo.svg?token=GHSAT0AAAAAADXC5UUS2RLFHMJRRWBUFW6G2NPRE3Q" alt="Velos Logo" width="50" />
+  <img src="https://raw.githubusercontent.com/FikerTaddev/Velos/refs/heads/main/docs/logo.svg" alt="Velos Logo" width="50" />
   <a href="https://www.apache.org/licenses/LICENSE-2.0">
     <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License">
   </a>
   <img src="https://img.shields.io/badge/build-passing-brightgreen" alt="Build Status">
 </div>
+
 **Velos** is a **lightweight, reactive UI framework** for the browser.  
 v0.1.0 ships a **fully working core runtime** with:
 
@@ -89,7 +90,7 @@ http://localhost:3000
 ## Example Usage
 
 ```typescript
-import { H, Render, State } from "./Velos"
+import {H , Render , State} from "./Velos"
 
 // Reactive count - no manual setup needed!
 const [count, setCount] = State(0)
@@ -109,8 +110,7 @@ function App() {
   )
 }
 
-// Initial render
-Render(App, document.body)
+render(app(), document.body)
 ```
 
 **Flow:**
@@ -155,7 +155,7 @@ docs/             # Images, diagrams, notes
 
 Apache License 2.0 © 2026 Velos Team
 
-![Velos Diagram](https://raw.githubusercontent.com/your-username/velos/main/docs/velos-diagram.png)
+![Velos Diagram](https://raw.githubusercontent.com/FikerTaddev/Velos/refs/heads/main/docs/logo.svg)
 
 
 ---
